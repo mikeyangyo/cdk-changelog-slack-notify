@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.3](https://github.com/mikeyangyo/cdk-changelog-slack-notify/compare/v0.1.2...v0.1.3) (2020-11-19)
+
+
+### Bug Fixes
+
+* **lambda:** fix bug when trigger by first commit would lead to last commit not found error ([0d42175](https://github.com/mikeyangyo/cdk-changelog-slack-notify/commit/0d42175535042245c90bc27e3b9e536e1e8495ab))
+
 ### [0.1.2](https://github.com/mikeyangyo/cdk-changelog-slack-notify/compare/v0.1.1...v0.1.2) (2020-11-19)
 
 
