@@ -45,7 +45,6 @@ junit.xml
 tsconfig.json
 cdk.out
 cdk.context.json
-images
 yarn-error.log
 .env
 .vscode

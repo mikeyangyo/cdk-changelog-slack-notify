@@ -15,7 +15,6 @@ dist
 /.eslintrc.json
 cdk.out
 cdk.context.json
-images
 yarn-error.log
 .env
 .vscode
