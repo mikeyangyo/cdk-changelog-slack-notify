@@ -18,6 +18,7 @@ cdk.context.json
 images
 yarn-error.log
 .env
+.vscode
 !/lib
 !/lib/**/*.js
 !/lib/**/*.d.ts
