@@ -1,3 +1,4 @@
+import * as path from 'path';
 import * as codecommit from '@aws-cdk/aws-codecommit';
 import * as events_targets from '@aws-cdk/aws-events-targets';
 import * as iam from '@aws-cdk/aws-iam';
@@ -108,7 +109,7 @@ export class ChangelogSlackNotify extends cdk.Construct {
     const lambdaFun = new lambda.Function(this, 'lambda_fun', {
       handler: 'index.handler',
       runtime: lambda.Runtime.PYTHON_3_7,
-      code: lambda.Code.fromAsset('function'),
+      code: lambda.Code.fromAsset(path.join(__dirname, '../function')),
       environment: environment,
       memorySize: 128,
       timeout: cdk.Duration.seconds(5),
