@@ -1,0 +1,218 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`integ snapshot validation 1`] = `
+Object {
+  "Parameters": Object {
+    "AssetParameters2d78ef6bef2aaafa21f9873490b7131f5bfd0db4b9bf4310e2970226f1d32a4bArtifactHashB132CB58": Object {
+      "Description": "Artifact hash for asset \\"2d78ef6bef2aaafa21f9873490b7131f5bfd0db4b9bf4310e2970226f1d32a4b\\"",
+      "Type": "String",
+    },
+    "AssetParameters2d78ef6bef2aaafa21f9873490b7131f5bfd0db4b9bf4310e2970226f1d32a4bS3Bucket656A5C06": Object {
+      "Description": "S3 bucket for asset \\"2d78ef6bef2aaafa21f9873490b7131f5bfd0db4b9bf4310e2970226f1d32a4b\\"",
+      "Type": "String",
+    },
+    "AssetParameters2d78ef6bef2aaafa21f9873490b7131f5bfd0db4b9bf4310e2970226f1d32a4bS3VersionKey43806A87": Object {
+      "Description": "S3 key for asset version \\"2d78ef6bef2aaafa21f9873490b7131f5bfd0db4b9bf4310e2970226f1d32a4b\\"",
+      "Type": "String",
+    },
+  },
+  "Resources": Object {
+    "changelogSlackNotifyRepository1646AE5D": Object {
+      "Properties": Object {
+        "RepositoryDescription": "A repo created by ChangelogSlackNotify lib",
+        "RepositoryName": "test-repo",
+      },
+      "Type": "AWS::CodeCommit::Repository",
+    },
+    "changelogSlackNotifyRepositoryCommitToMasterRuleAllowEventRuleteststackchangelogSlackNotifyRepositoryCommitToMasterRuleBDFA5C504A125FE5": Object {
+      "Properties": Object {
+        "Action": "lambda:InvokeFunction",
+        "FunctionName": Object {
+          "Fn::GetAtt": Array [
+            "changelogSlackNotifylambdafun802F40CB",
+            "Arn",
+          ],
+        },
+        "Principal": "events.amazonaws.com",
+        "SourceArn": Object {
+          "Fn::GetAtt": Array [
+            "changelogSlackNotifyRepositoryCommitToMasterRuleC74E37BD",
+            "Arn",
+          ],
+        },
+      },
+      "Type": "AWS::Lambda::Permission",
+    },
+    "changelogSlackNotifyRepositoryCommitToMasterRuleC74E37BD": Object {
+      "Properties": Object {
+        "EventPattern": Object {
+          "detail": Object {
+            "event": Array [
+              "referenceCreated",
+              "referenceUpdated",
+            ],
+            "referenceName": Array [
+              "master",
+            ],
+          },
+          "detail-type": Array [
+            "CodeCommit Repository State Change",
+          ],
+          "resources": Array [
+            Object {
+              "Fn::GetAtt": Array [
+                "changelogSlackNotifyRepository1646AE5D",
+                "Arn",
+              ],
+            },
+          ],
+          "source": Array [
+            "aws.codecommit",
+          ],
+        },
+        "State": "ENABLED",
+        "Targets": Array [
+          Object {
+            "Arn": Object {
+              "Fn::GetAtt": Array [
+                "changelogSlackNotifylambdafun802F40CB",
+                "Arn",
+              ],
+            },
+            "Id": "Target0",
+          },
+        ],
+      },
+      "Type": "AWS::Events::Rule",
+    },
+    "changelogSlackNotifylambdafun802F40CB": Object {
+      "DependsOn": Array [
+        "changelogSlackNotifylambdafunServiceRoleDefaultPolicyD2073092",
+        "changelogSlackNotifylambdafunServiceRoleC94AD9DB",
+      ],
+      "Properties": Object {
+        "Code": Object {
+          "S3Bucket": Object {
+            "Ref": "AssetParameters2d78ef6bef2aaafa21f9873490b7131f5bfd0db4b9bf4310e2970226f1d32a4bS3Bucket656A5C06",
+          },
+          "S3Key": Object {
+            "Fn::Join": Array [
+              "",
+              Array [
+                Object {
+                  "Fn::Select": Array [
+                    0,
+                    Object {
+                      "Fn::Split": Array [
+                        "||",
+                        Object {
+                          "Ref": "AssetParameters2d78ef6bef2aaafa21f9873490b7131f5bfd0db4b9bf4310e2970226f1d32a4bS3VersionKey43806A87",
+                        },
+                      ],
+                    },
+                  ],
+                },
+                Object {
+                  "Fn::Select": Array [
+                    1,
+                    Object {
+                      "Fn::Split": Array [
+                        "||",
+                        Object {
+                          "Ref": "AssetParameters2d78ef6bef2aaafa21f9873490b7131f5bfd0db4b9bf4310e2970226f1d32a4bS3VersionKey43806A87",
+                        },
+                      ],
+                    },
+                  ],
+                },
+              ],
+            ],
+          },
+        },
+        "Environment": Object {
+          "Variables": Object {
+            "BREAKING_CHANGE_TYPE_DISPLAY_NAME": "BREAKING CHANGES",
+            "CHANNEL_NAME": "slack-channel-name",
+            "FEATURE_TYPE_DISPLAY_NAME": "New Features",
+            "FIX_TYPE_DISPLAY_NAME": "Bugs Fixed",
+            "PERFORMANCE_TYPE_DISPLAY_NAME": "Performance Improvement",
+            "SLACK_TOKEN": "slack-token",
+            "UNDEFINED_TYPE_DISPLAY_NAME": "Others",
+          },
+        },
+        "Handler": "index.handler",
+        "MemorySize": 128,
+        "Role": Object {
+          "Fn::GetAtt": Array [
+            "changelogSlackNotifylambdafunServiceRoleC94AD9DB",
+            "Arn",
+          ],
+        },
+        "Runtime": "python3.7",
+        "Timeout": 5,
+      },
+      "Type": "AWS::Lambda::Function",
+    },
+    "changelogSlackNotifylambdafunServiceRoleC94AD9DB": Object {
+      "Properties": Object {
+        "AssumeRolePolicyDocument": Object {
+          "Statement": Array [
+            Object {
+              "Action": "sts:AssumeRole",
+              "Effect": "Allow",
+              "Principal": Object {
+                "Service": "lambda.amazonaws.com",
+              },
+            },
+          ],
+          "Version": "2012-10-17",
+        },
+        "ManagedPolicyArns": Array [
+          Object {
+            "Fn::Join": Array [
+              "",
+              Array [
+                "arn:",
+                Object {
+                  "Ref": "AWS::Partition",
+                },
+                ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole",
+              ],
+            ],
+          },
+        ],
+      },
+      "Type": "AWS::IAM::Role",
+    },
+    "changelogSlackNotifylambdafunServiceRoleDefaultPolicyD2073092": Object {
+      "Properties": Object {
+        "PolicyDocument": Object {
+          "Statement": Array [
+            Object {
+              "Action": Array [
+                "codecommit:GetDifferences",
+                "codecommit:GetCommit",
+              ],
+              "Effect": "Allow",
+              "Resource": Object {
+                "Fn::GetAtt": Array [
+                  "changelogSlackNotifyRepository1646AE5D",
+                  "Arn",
+                ],
+              },
+            },
+          ],
+          "Version": "2012-10-17",
+        },
+        "PolicyName": "changelogSlackNotifylambdafunServiceRoleDefaultPolicyD2073092",
+        "Roles": Array [
+          Object {
+            "Ref": "changelogSlackNotifylambdafunServiceRoleC94AD9DB",
+          },
+        ],
+      },
+      "Type": "AWS::IAM::Policy",
+    },
+  },
+}
+`;
