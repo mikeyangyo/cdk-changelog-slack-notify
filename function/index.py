@@ -10,7 +10,6 @@ from urllib.request import Request, urlopen
 
 import boto3
 
-# logger = logging.getLogger()
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
 
@@ -489,38 +488,3 @@ def handler(event, context):
         response["message"] = "success"
 
     return response
-
-
-if __name__ == "__main__":
-    handler(
-        event={
-            'version':
-            '0',
-            'id':
-            '2ff39487-efa3-773a-07a9-75e759d760c8',
-            'detail-type':
-            'CodeCommit Repository State Change',
-            'source':
-            'aws.codecommit',
-            'account':
-            '781407552894',
-            'time':
-            '2020-11-19T16:27:18Z',
-            'region':
-            'us-east-1',
-            'resources': [
-                'arn:aws:codecommit:us-east-1:781407552894:changelog-slack-notify-repo'
-            ],
-            'detail': {
-                'callerUserArn': 'arn:aws:iam::781407552894:user/mike',
-                'commitId': '4e0edce1e42eee105d414cfa7942346203f51841',
-                'event': 'referenceCreated',
-                'referenceFullName': 'refs/heads/master',
-                'referenceName': 'master',
-                'referenceType': 'branch',
-                'repositoryId': '80cb4642-f6b2-49a8-9c05-6e01e2605138',
-                'repositoryName': 'changelog-slack-notify-repo'
-            }
-        },
-        context=None,
-    )
