@@ -62,47 +62,6 @@ test('create the default changelog slack notification service', () => {
   });
 
   expect(stack).toHaveResource('AWS::Lambda::Function', {
-    Code: {
-      S3Bucket: {
-        Ref:
-					'AssetParameters2d78ef6bef2aaafa21f9873490b7131f5bfd0db4b9bf4310e2970226f1d32a4bS3Bucket656A5C06',
-      },
-      S3Key: {
-        'Fn::Join': [
-          '',
-          [
-            {
-              'Fn::Select': [
-                0,
-                {
-                  'Fn::Split': [
-                    '||',
-                    {
-                      Ref:
-												'AssetParameters2d78ef6bef2aaafa21f9873490b7131f5bfd0db4b9bf4310e2970226f1d32a4bS3VersionKey43806A87',
-                    },
-                  ],
-                },
-              ],
-            },
-            {
-              'Fn::Select': [
-                1,
-                {
-                  'Fn::Split': [
-                    '||',
-                    {
-                      Ref:
-												'AssetParameters2d78ef6bef2aaafa21f9873490b7131f5bfd0db4b9bf4310e2970226f1d32a4bS3VersionKey43806A87',
-                    },
-                  ],
-                },
-              ],
-            },
-          ],
-        ],
-      },
-    },
     Environment: {
       Variables: {
         BREAKING_CHANGE_TYPE_DISPLAY_NAME: 'BREAKING CHANGES',
@@ -246,47 +205,6 @@ test('add existing repo reuse support', () => {
   });
 
   expect(stack).toHaveResource('AWS::Lambda::Function', {
-    Code: {
-      S3Bucket: {
-        Ref:
-					'AssetParameters2d78ef6bef2aaafa21f9873490b7131f5bfd0db4b9bf4310e2970226f1d32a4bS3Bucket656A5C06',
-      },
-      S3Key: {
-        'Fn::Join': [
-          '',
-          [
-            {
-              'Fn::Select': [
-                0,
-                {
-                  'Fn::Split': [
-                    '||',
-                    {
-                      Ref:
-												'AssetParameters2d78ef6bef2aaafa21f9873490b7131f5bfd0db4b9bf4310e2970226f1d32a4bS3VersionKey43806A87',
-                    },
-                  ],
-                },
-              ],
-            },
-            {
-              'Fn::Select': [
-                1,
-                {
-                  'Fn::Split': [
-                    '||',
-                    {
-                      Ref:
-												'AssetParameters2d78ef6bef2aaafa21f9873490b7131f5bfd0db4b9bf4310e2970226f1d32a4bS3VersionKey43806A87',
-                    },
-                  ],
-                },
-              ],
-            },
-          ],
-        ],
-      },
-    },
     Environment: {
       Variables: {
         BREAKING_CHANGE_TYPE_DISPLAY_NAME: 'BREAKING CHANGES',
@@ -435,47 +353,6 @@ test('add reading changelog file support', () => {
   });
 
   expect(stack).toHaveResource('AWS::Lambda::Function', {
-    Code: {
-      S3Bucket: {
-        Ref:
-					'AssetParameters2d78ef6bef2aaafa21f9873490b7131f5bfd0db4b9bf4310e2970226f1d32a4bS3Bucket656A5C06',
-      },
-      S3Key: {
-        'Fn::Join': [
-          '',
-          [
-            {
-              'Fn::Select': [
-                0,
-                {
-                  'Fn::Split': [
-                    '||',
-                    {
-                      Ref:
-												'AssetParameters2d78ef6bef2aaafa21f9873490b7131f5bfd0db4b9bf4310e2970226f1d32a4bS3VersionKey43806A87',
-                    },
-                  ],
-                },
-              ],
-            },
-            {
-              'Fn::Select': [
-                1,
-                {
-                  'Fn::Split': [
-                    '||',
-                    {
-                      Ref:
-												'AssetParameters2d78ef6bef2aaafa21f9873490b7131f5bfd0db4b9bf4310e2970226f1d32a4bS3VersionKey43806A87',
-                    },
-                  ],
-                },
-              ],
-            },
-          ],
-        ],
-      },
-    },
     Environment: {
       Variables: {
         BREAKING_CHANGE_TYPE_DISPLAY_NAME: 'BREAKING CHANGES',
@@ -612,47 +489,6 @@ test('add tracking other branches support', () => {
   });
 
   expect(stack).toHaveResource('AWS::Lambda::Function', {
-    Code: {
-      S3Bucket: {
-        Ref:
-					'AssetParameters2d78ef6bef2aaafa21f9873490b7131f5bfd0db4b9bf4310e2970226f1d32a4bS3Bucket656A5C06',
-      },
-      S3Key: {
-        'Fn::Join': [
-          '',
-          [
-            {
-              'Fn::Select': [
-                0,
-                {
-                  'Fn::Split': [
-                    '||',
-                    {
-                      Ref:
-												'AssetParameters2d78ef6bef2aaafa21f9873490b7131f5bfd0db4b9bf4310e2970226f1d32a4bS3VersionKey43806A87',
-                    },
-                  ],
-                },
-              ],
-            },
-            {
-              'Fn::Select': [
-                1,
-                {
-                  'Fn::Split': [
-                    '||',
-                    {
-                      Ref:
-												'AssetParameters2d78ef6bef2aaafa21f9873490b7131f5bfd0db4b9bf4310e2970226f1d32a4bS3VersionKey43806A87',
-                    },
-                  ],
-                },
-              ],
-            },
-          ],
-        ],
-      },
-    },
     Environment: {
       Variables: {
         BREAKING_CHANGE_TYPE_DISPLAY_NAME: 'BREAKING CHANGES',
@@ -788,47 +624,6 @@ test('add custom display name of change type support', () => {
   });
 
   expect(stack).toHaveResource('AWS::Lambda::Function', {
-    Code: {
-      S3Bucket: {
-        Ref:
-					'AssetParameters2d78ef6bef2aaafa21f9873490b7131f5bfd0db4b9bf4310e2970226f1d32a4bS3Bucket656A5C06',
-      },
-      S3Key: {
-        'Fn::Join': [
-          '',
-          [
-            {
-              'Fn::Select': [
-                0,
-                {
-                  'Fn::Split': [
-                    '||',
-                    {
-                      Ref:
-												'AssetParameters2d78ef6bef2aaafa21f9873490b7131f5bfd0db4b9bf4310e2970226f1d32a4bS3VersionKey43806A87',
-                    },
-                  ],
-                },
-              ],
-            },
-            {
-              'Fn::Select': [
-                1,
-                {
-                  'Fn::Split': [
-                    '||',
-                    {
-                      Ref:
-												'AssetParameters2d78ef6bef2aaafa21f9873490b7131f5bfd0db4b9bf4310e2970226f1d32a4bS3VersionKey43806A87',
-                    },
-                  ],
-                },
-              ],
-            },
-          ],
-        ],
-      },
-    },
     Environment: {
       Variables: {
         FEATURE_TYPE_DISPLAY_NAME: 'feat',
