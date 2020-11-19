@@ -304,6 +304,8 @@ def read_from_commits(repository_name, newest_commit_id, last_commit_id):
                 author=author["name"].strip(),
                 author_email=author["email"].strip(),
             ))
+        if not commit_response["parents"]:
+            break
         cur_commit_id = commit_response["parents"][-1]
 
     return commits
@@ -317,12 +319,19 @@ def read_from_changelog(
 ):
     blob_id: str = ""
     next_token: str
-    params = dict(
-        repositoryName=repository_name,
-        beforeCommitSpecifier=newest_commit_id,
-        afterCommitSpecifier=last_commit_id,
-        MaxResults=1,
-    )
+    if last_commit_id:
+        params = dict(
+            repositoryName=repository_name,
+            beforeCommitSpecifier=newest_commit_id,
+            afterCommitSpecifier=last_commit_id,
+            MaxResults=1,
+        )
+    else:
+        params = dict(
+            repositoryName=repository_name,
+            afterCommitSpecifier=newest_commit_id,
+            MaxResults=1,
+        )
     while 1:
         response = codecommit_client.get_differences(**params)
         differences = response["differences"]
@@ -422,7 +431,7 @@ def handler(event, context):
     logger.info("====detail.commitId====")
     logger.info(newest_commit_id)
 
-    last_commit_id = detail["oldCommitId"]
+    last_commit_id = detail.get("oldCommitId") or ''
     logger.info("====detail.oldCommitId====")
     logger.info(last_commit_id)
 
@@ -485,25 +494,32 @@ def handler(event, context):
 if __name__ == "__main__":
     handler(
         event={
-            'version': '0',
-            'id': '38805584-ebc4-bcc3-3a6d-9cd52f156b46',
-            'detail-type': 'CodeCommit Repository State Change',
-            'source': 'aws.codecommit',
-            'account': '781407552894',
-            'time': '2020-11-19T10:41:06Z',
-            'region': 'us-east-1',
-            'resources':
-            ['arn:aws:codecommit:us-east-1:781407552894:test-repo'],
+            'version':
+            '0',
+            'id':
+            '2ff39487-efa3-773a-07a9-75e759d760c8',
+            'detail-type':
+            'CodeCommit Repository State Change',
+            'source':
+            'aws.codecommit',
+            'account':
+            '781407552894',
+            'time':
+            '2020-11-19T16:27:18Z',
+            'region':
+            'us-east-1',
+            'resources': [
+                'arn:aws:codecommit:us-east-1:781407552894:changelog-slack-notify-repo'
+            ],
             'detail': {
                 'callerUserArn': 'arn:aws:iam::781407552894:user/mike',
-                'commitId': '15433aaf65bc9632a6e2c2a03a5e303d7ad8bd30',
-                'event': 'referenceUpdated',
-                'oldCommitId': '4e11eea82621ea917930da6271eddc66e9af8c41',
+                'commitId': '4e0edce1e42eee105d414cfa7942346203f51841',
+                'event': 'referenceCreated',
                 'referenceFullName': 'refs/heads/master',
                 'referenceName': 'master',
                 'referenceType': 'branch',
-                'repositoryId': '89ac67da-c3d6-47e8-9cf8-b8ffabe9841a',
-                'repositoryName': 'test-repo'
+                'repositoryId': '80cb4642-f6b2-49a8-9c05-6e01e2605138',
+                'repositoryName': 'changelog-slack-notify-repo'
             }
         },
         context=None,
