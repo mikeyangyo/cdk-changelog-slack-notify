@@ -34,3 +34,19 @@ new ChangelogSlackNotify(testStack, 'ChangelogSlackNotify', {
 ```sh
 cdk deploy
 ```
+
+# Screenshots
+
+## without changelog:
+![without changelog image](images/without_changelog.png "Demo image w/o changelog file")
+
+## with changelog :
+![with changelog image](images/with_changelog.png "Demo image w/ changelog file")
+
+# Credits
+
+This project a based heavily on work by the following:
+
+* commitizen-tools for [commitizen]
+
+[commitizen]: https://github.com/commitizen-tools/commitizen
