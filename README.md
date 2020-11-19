@@ -1,6 +1,7 @@
 [![NPM version](https://badge.fury.io/js/cdk-changelog-slack-notify.svg)](https://badge.fury.io/js/cdk-changelog-slack-notify)
 [![PyPI version](https://badge.fury.io/py/cdk-changelog-slack-notify.svg)](https://badge.fury.io/py/cdk-changelog-slack-notify)
-![Release](https://github.com/clarencetw/cdk-changelog-slack-notify/workflows/Release/badge.svg)
+![Release](https://github.com/mikeyangyo/cdk-changelog-slack-notify/workflows/Release/badge.svg)
+[![codecov](https://codecov.io/gh/mikeyangyo/cdk-changelog-slack-notify/branch/main/graph/badge.svg?token=MNQ4CKJDLS)](https://codecov.io/gh/mikeyangyo/cdk-changelog-slack-notify)
 
 # cdk-changelog-slack-notify
 
