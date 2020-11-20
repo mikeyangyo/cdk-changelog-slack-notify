@@ -2,6 +2,11 @@
 [![PyPI version](https://badge.fury.io/py/cdk-changelog-slack-notify.svg)](https://badge.fury.io/py/cdk-changelog-slack-notify)
 ![Release](https://github.com/mikeyangyo/cdk-changelog-slack-notify/workflows/Release/badge.svg)
 [![codecov](https://codecov.io/gh/mikeyangyo/cdk-changelog-slack-notify/branch/main/graph/badge.svg?token=MNQ4CKJDLS)](https://codecov.io/gh/mikeyangyo/cdk-changelog-slack-notify)
+[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli)
+
+![Downloads](https://img.shields.io/badge/-DOWNLOADS:-brightgreen?color=grey)
+![npm](https://img.shields.io/npm/dt/cdk-changelog-slack-notify?label=npm&color=orange)
+![PyPI](https://img.shields.io/pypi/dm/cdk-changelog-slack-notify?label=pypi&color=blue)
 
 # cdk-changelog-slack-notify
 
@@ -38,10 +43,10 @@ cdk deploy
 # Screenshots
 
 ## without changelog:
-![without changelog image](images/without_changelog.png "Demo image w/o changelog file")
+![without changelog image](https://raw.githubusercontent.com/mikeyangyo/cdk-changelog-slack-notify/main/images/without_changelog.png "Demo image w/o changelog file")
 
 ## with changelog :
-![with changelog image](images/with_changelog.png "Demo image w/ changelog file")
+![with changelog image](https://raw.githubusercontent.com/mikeyangyo/cdk-changelog-slack-notify/main/images/with_changelog.png "Demo image w/ changelog file")
 
 # Credits
 
