@@ -43,7 +43,8 @@ const common_exclude = [
 	"cdk.context.json",
 	"yarn-error.log",
 	".env",
-	'.vscode'
+	".vscode",
+	"images"
 ];
 project.npmignore.exclude(...common_exclude);
 project.gitignore.exclude(...common_exclude);

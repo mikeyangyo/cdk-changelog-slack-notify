@@ -48,6 +48,7 @@ cdk.context.json
 yarn-error.log
 .env
 .vscode
+images
 !/package.json
 !/.npmignore
 !/LICENSE
