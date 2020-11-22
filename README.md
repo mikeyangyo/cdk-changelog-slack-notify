@@ -40,13 +40,17 @@ new ChangelogSlackNotify(testStack, 'ChangelogSlackNotify', {
 cdk deploy
 ```
 
+# Architecture
+
+![architecture diagram](https://drive.google.com/uc?export=view&id=1icUVmbTXmVqjedLBRF3w2itayQlpjpUV "123")
+
 # Screenshots
 
 ## without changelog:
-![without changelog image](https://raw.githubusercontent.com/mikeyangyo/cdk-changelog-slack-notify/main/images/without_changelog.png "Demo image w/o changelog file")
+![without changelog image](https://drive.google.com/uc?export=view&id=1hscxSGuIF93bUAjpjzx5jIbbvLStNHnA "Demo image w/o changelog file")
 
 ## with changelog :
-![with changelog image](https://raw.githubusercontent.com/mikeyangyo/cdk-changelog-slack-notify/main/images/with_changelog.png "Demo image w/ changelog file")
+![with changelog image](https://drive.google.com/uc?export=view&id=1GruPitrk4_gogl9nhwp71hrnDXFUe3jD "Demo image w/ changelog file")
 
 # Credits
 
