@@ -76,7 +76,7 @@
   ],
   "main": "lib/index.js",
   "license": "MIT",
-  "version": "0.1.12",
+  "version": "0.1.14",
   "jest": {
     "clearMocks": true,
     "collectCoverage": true,
