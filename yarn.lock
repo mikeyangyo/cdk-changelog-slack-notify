@@ -182,7 +182,7 @@
     "@aws-cdk/region-info" "1.74.0"
     constructs "^3.2.0"
 
-"@aws-cdk/aws-codecommit@1.74.0", "@aws-cdk/aws-codecommit@^1.74.0":
+"@aws-cdk/aws-codecommit@1.74.0":
   version "1.74.0"
   resolved "https://registry.yarnpkg.com/@aws-cdk/aws-codecommit/-/aws-codecommit-1.74.0.tgz#87df049527e643544c98b646221eefee8bb7fc29"
   integrity sha512-WtN+zbgFK8bLdQM7qADMiDZJfSHyFcdjChxOYEdjuJFXZ+hF4ooWq4c4Y58Kdx0gmdLN0L8apq0rgp/EawkZUw==
@@ -336,7 +336,7 @@
     "@aws-cdk/region-info" "1.74.0"
     constructs "^3.2.0"
 
-"@aws-cdk/aws-events-targets@^1.74.0":
+"@aws-cdk/aws-events-targets@1.74.0":
   version "1.74.0"
   resolved "https://registry.yarnpkg.com/@aws-cdk/aws-events-targets/-/aws-events-targets-1.74.0.tgz#a88f1c50ead14aecd5270a11ea7b3639fef72f5c"
   integrity sha512-9xEY59aTNbsMmXLchpeX4qgIm8Ggh+PpzPxVH/s9wQM2i40lInQOZgs0wJPGMHY7Y8gVTu2uVsyrchPeXVuUQw==
@@ -367,7 +367,7 @@
     "@aws-cdk/core" "1.74.0"
     constructs "^3.2.0"
 
-"@aws-cdk/aws-iam@1.74.0", "@aws-cdk/aws-iam@^1.74.0":
+"@aws-cdk/aws-iam@1.74.0":
   version "1.74.0"
   resolved "https://registry.yarnpkg.com/@aws-cdk/aws-iam/-/aws-iam-1.74.0.tgz#c255c9676fb6048ab27c00d111ed5e7d8b46877c"
   integrity sha512-5Eq4e4/be2HMFZXc1sCeNjqgTyjlWgvIjbLh0Q4c01V05r7MbPdmfZRurbeEA6NohGf+zYFQrCzPnTaqvFPFHA==
@@ -404,7 +404,7 @@
     "@aws-cdk/core" "1.74.0"
     constructs "^3.2.0"
 
-"@aws-cdk/aws-lambda@1.74.0", "@aws-cdk/aws-lambda@^1.74.0":
+"@aws-cdk/aws-lambda@1.74.0":
   version "1.74.0"
   resolved "https://registry.yarnpkg.com/@aws-cdk/aws-lambda/-/aws-lambda-1.74.0.tgz#52175fbc9e679ca5c0f4d15e0666c99fc4a953d0"
   integrity sha512-Ju3/mhnli33xnO2qvJUs11djva12SHnmJPGtbx4Nz33z577/pCwLZYWa7noP8eUzAyBglfNlPG8JWH+fNHPbew==
@@ -608,7 +608,7 @@
     string-width "^4.2.0"
     table "^6.0.3"
 
-"@aws-cdk/core@1.74.0", "@aws-cdk/core@^1.74.0":
+"@aws-cdk/core@1.74.0":
   version "1.74.0"
   resolved "https://registry.yarnpkg.com/@aws-cdk/core/-/core-1.74.0.tgz#132d31c0ab9d39394827431ccd804cf10de34273"
   integrity sha512-1iKRIRKyMQ8ZmPvkAAjSIGl4Fh7tLIE7D23ht25ayNGp0XVG1Hd858x2GmDzI/J1ZK6xsuTsEDGbi5/saR69ng==
@@ -5346,10 +5346,10 @@ progress@^2.0.0:
   resolved "https://registry.yarnpkg.com/progress/-/progress-2.0.3.tgz#7e8cf8d8f5b8f239c1bc68beb4eb78567d572ef8"
   integrity sha512-7PiHtLll5LdnKIMw100I+8xJXR5gW2QwWYkT6iJva0bXitZKa/XMrSbdmg3r2Xnaidz9Qumd0VPaMrZlF9V9sA==
 
-projen@^0.3.173:
-  version "0.3.173"
-  resolved "https://registry.yarnpkg.com/projen/-/projen-0.3.173.tgz#68071429b2bf04a3ff239c780f9313ce8356ab88"
-  integrity sha512-s9g0iKzfUAnpPZ8qcaKr5j8cvvP1j8f9OtSa3khLwHVG8KC25YeJcnzZLhvUrhXH5WjVT0YfGQDaNhwDa2UkEA==
+projen@^0.6.0:
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/projen/-/projen-0.6.0.tgz#62c71c10c36e8b1e9a67455ebaa58d186d090bea"
+  integrity sha512-sTDx+WTCHR4x5vY3X+piHXjbTQ9om3VIjpX8dCCJaVRYSqamzyjuPOXayHL/9+MoUFx6LXOI2hao1MOGSQ8WYg==
   dependencies:
     "@iarna/toml" "^2.2.5"
     chalk "^4.1.0"
@@ -5359,7 +5359,7 @@ projen@^0.3.173:
     inquirer "^7.3.3"
     semver "^7.3.2"
     yaml "^1.10.0"
-    yargs "^16.0.3"
+    yargs "^16.1.1"
 
 prompts@^2.0.1:
   version "2.4.0"
@@ -6854,7 +6854,7 @@ yargs@^15.3.1, yargs@^15.4.1:
     y18n "^4.0.0"
     yargs-parser "^18.1.2"
 
-yargs@^16.0.3, yargs@^16.1.0, yargs@^16.1.1:
+yargs@^16.1.0, yargs@^16.1.1:
   version "16.1.1"
   resolved "https://registry.yarnpkg.com/yargs/-/yargs-16.1.1.tgz#5a4a095bd1ca806b0a50d0c03611d38034d219a1"
   integrity sha512-hAD1RcFP/wfgfxgMVswPE+z3tlPFtxG8/yWUrG2i17sTWGCGqWnxKcLTF4cUKDUK8fzokwsmO9H0TDkRbMHy8w==

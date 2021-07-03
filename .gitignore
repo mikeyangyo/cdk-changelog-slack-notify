@@ -49,6 +49,7 @@ yarn-error.log
 .env
 .vscode
 images
+!/.projen/tasks.json
 !/package.json
 !/.npmignore
 !/LICENSE
@@ -61,6 +62,7 @@ images
 !/.mergify.yml
 !/.github/dependabot.yml
 !/.github/pull_request_template.md
+!/.github/workflows/rebuild-bot.yml
 !/src
 !/tsconfig.jest.json
 !/.eslintrc.json

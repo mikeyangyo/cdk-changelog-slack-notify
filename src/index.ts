@@ -7,66 +7,66 @@ import * as cdk from '@aws-cdk/core';
 
 export interface ChangelogSlackNotifyProps {
   /**
-	 * repository name to track
-	 */
+   * repository name to track
+   */
   readonly repositoryName: string;
   /**
-	 * Slack channel name for sending message
-	 */
+   * Slack channel name for sending message
+   */
   readonly channelName: string;
   /**
-	 * Slack secret token for sending message
-	 */
+   * Slack secret token for sending message
+   */
   readonly slackToken: string;
   /**
-	 * Branches which were tracking to send notification message
-	 *
-	 * @default - If this value is _not_ set, considers to track master branch
-	 */
+   * Branches which were tracking to send notification message
+   *
+   * @default - If this value is _not_ set, considers to track master branch
+   */
   readonly trackingBranches?: string[];
   /**
-	 * Path of changelog file in repository
-	 *
-	 * @default - If this value is _not_ set,
-	 * considers to read commits push in master on this time to build notification message
-	 */
+   * Path of changelog file in repository
+   *
+   * @default - If this value is _not_ set,
+   * considers to read commits push in master on this time to build notification message
+   */
   readonly changelogPath?: string;
   /**
-	 * Display name in notification message for feature changes
-	 *
-	 * @default - If this value is _not_ set, considers to New Features
-	 */
+   * Display name in notification message for feature changes
+   *
+   * @default - If this value is _not_ set, considers to New Features
+   */
   readonly featureTypeDisplayName?: string;
   /**
-	 * Display name in notification message for fix changes
-	 *
-	 * @default - If this value is _not_ set, considers to Bugs Fixed
-	 */
+   * Display name in notification message for fix changes
+   *
+   * @default - If this value is _not_ set, considers to Bugs Fixed
+   */
   readonly fixTypeDisplayName?: string;
   /**
-	 * Display name in notification message for performance improvement changes
-	 *
-	 * @default - If this value is _not_ set, considers to Performance Improvement
-	 */
+   * Display name in notification message for performance improvement changes
+   *
+   * @default - If this value is _not_ set, considers to Performance Improvement
+   */
   readonly performanceTypeDisplayName?: string;
   /**
-	 * Display name in notification message for breaking changes
-	 *
-	 * @default - If this value is _not_ set, considers to BREAKING CHANGES
-	 */
+   * Display name in notification message for breaking changes
+   *
+   * @default - If this value is _not_ set, considers to BREAKING CHANGES
+   */
   readonly breakingChangeTypeDisplayName?: string;
   /**
-	 * Display name in notification message for undefined type changes
-	 *
-	 * @default - If this value is _not_ set, considers to Others
-	 */
+   * Display name in notification message for undefined type changes
+   *
+   * @default - If this value is _not_ set, considers to Others
+   */
   readonly undefinedTypeDisplayName?: string;
   /**
-	 * set True to use $repositoryName to find exist repository.
-	 *  on the other hand, create a repository named $repositoryName
-	 *
-	 * @default - If this value is _not_ set, considers to false
-	 */
+   * set True to use $repositoryName to find exist repository.
+   *  on the other hand, create a repository named $repositoryName
+   *
+   * @default - If this value is _not_ set, considers to false
+   */
   readonly fromExistRepository?: boolean;
 }
 
@@ -96,10 +96,10 @@ export class ChangelogSlackNotify extends cdk.Construct {
       FEATURE_TYPE_DISPLAY_NAME: props.featureTypeDisplayName || 'New Features',
       FIX_TYPE_DISPLAY_NAME: props.fixTypeDisplayName || 'Bugs Fixed',
       PERFORMANCE_TYPE_DISPLAY_NAME:
-				props.performanceTypeDisplayName || 'Performance Improvement',
+        props.performanceTypeDisplayName || 'Performance Improvement',
       UNDEFINED_TYPE_DISPLAY_NAME: props.undefinedTypeDisplayName || 'Others',
       BREAKING_CHANGE_TYPE_DISPLAY_NAME:
-				props.breakingChangeTypeDisplayName || 'BREAKING CHANGES',
+        props.breakingChangeTypeDisplayName || 'BREAKING CHANGES',
       CHANNEL_NAME: props.channelName,
       SLACK_TOKEN: props.slackToken,
     };
